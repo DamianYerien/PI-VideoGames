@@ -1,15 +1,12 @@
 const axios = require('axios');
 const { Router } = require('express');
-const videogame = Router();
+const rutaVideogame = Router();
 const { Videogame, Genre } = require('../db');
 const { API_KEY } = process.env;
 
-
-
-videogame.get("/:id", async (req, res) => {
+rutaVideogame.get("/:id", async (req, res) => {
     let { id } = req.params;
     if (typeof id !== "string") id = id.toString();
-
     axios.get(`https://api.rawg.io/api/games/${id}${API_KEY}`)
         .then(response => {
             const juego = {
@@ -27,13 +24,10 @@ videogame.get("/:id", async (req, res) => {
         .catch(error => {
             res.status(500).json({ error: error })
         })
-
 });
 
-videogame.post("/", (req, res) => {
-
+rutaVideogame.post("/", (req, res) => {
     let { name, image, description, released, rating, genres, platforms, createdInDb } = req.body;
-
     Videogame.create({
         name,
         image,
@@ -67,4 +61,4 @@ videogame.post("/", (req, res) => {
 
 
 
-module.exports = videogame;
+module.exports = rutaVideogame;

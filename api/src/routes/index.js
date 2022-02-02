@@ -4,15 +4,15 @@ const { Router } = require('express');
 
 
 const genres = require('./genres');
-const videogames = require('./videogames');
-const videogame = require('./videogame');
+const rutaVideogames = require('./videogames');
+const rutaVideogame = require('./videogame');
 
 const router = Router();
 
 // Configurar los routers
 // Ejemplo: router.use('/auth', authRouter);
 router.use("/genres", genres)
-router.use("/videogames", videogames);
-router.use("/videogame", videogame);
+router.use("/videogames", rutaVideogames);
+router.use("/videogame", rutaVideogame);
 
 module.exports = router;
