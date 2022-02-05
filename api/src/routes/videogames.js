@@ -1,8 +1,19 @@
+// [ ] GET /videogames:
+// Obtener un listado de los videojuegos
+// Debe devolver solo los datos necesarios para la ruta principal
+
+
+
 const axios = require('axios');
 const { Router } = require('express');
 const rutaVideogames = Router();
 const { Videogame, Genre } = require('../db');
 const { API_KEY } = process.env;
+
+//?key=8c3e5f3fed1d46f2aea94f990bd36061
+
+
+
 
 const obtieneJuegosApi = async () => {
     const juegosApi = [];
@@ -11,6 +22,7 @@ const obtieneJuegosApi = async () => {
         const consultaApi2 = await axios.get(`https://api.rawg.io/api/games${API_KEY}&page=26&page_size=4`);
         const consultaApi3 = await axios.get(`https://api.rawg.io/api/games${API_KEY}&page=27&page_size=4`);
         const resultadoApi = [...consultaApi1.data.results, ...consultaApi2.data.results, ...consultaApi3.data.results]
+     
         resultadoApi.forEach(resultado => {
             juegosApi.push(
                 {
@@ -48,7 +60,7 @@ const todosLosJuegos = async () => {
     try {
         const arrApi = await obtieneJuegosApi()
         const arrBd = await obtieneJuegosBd()
-        return arrBd.concat(arrApi)
+        return [...arrBd, ...arrApi]
     } catch (error) {
         return error
     }
@@ -63,7 +75,7 @@ rutaVideogames.get("/", async (req, res) => {
         })
         juegosFiltrados.length
             ? res.status(200).json(juegosFiltrados)
-            : res.status(404).send([])
+            : res.status(404).send('OMG !!! No existe ese juego')
     } else {
         res.status(200).json(juegosTotal)
     }
