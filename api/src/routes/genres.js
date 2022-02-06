@@ -9,23 +9,23 @@ const obtieneGeneros = async () => {
     const consultaApi = await axios.get(`https://api.rawg.io/api/genres${API_KEY}`);
     return consultaApi
 }
-var todosLosGeneros = [];    //PARA NICO : GENERO SERIA COMO TEMPERAMENTO PARA VOS
+var todosLosGeneros = [];    
 
 genres.get("/", async (req, res) => {      
-    let dataGeneros = await obtieneGeneros(); //OBTENGO UN OBJETO DE MI API
-    let arrGeneros = dataGeneros.data.results; //EXTRAIGO EL ARRAI CON LOS GENEROS DE LA API 
+    let dataGeneros = await obtieneGeneros(); 
+    let arrGeneros = dataGeneros.data.results;  
 
     arrGeneros.forEach(resultado => {
-        todosLosGeneros.push(resultado.name) //RECORRO EL ARRAY Y PUSHEO SOLO EL NOMBRE DEL GENERO A UN 
-    })                                          //ARRAY RESULTANTE
+        todosLosGeneros.push(resultado.name) 
+    })                                          
 
     todosLosGeneros.forEach(genreApi => {
         Genre.findOrCreate({
-            where: { name: genreApi  } //LE DIGO QUE BUSQUE O CREE EN LA BD GENRE LOS GENERO
-        })                            // SI ESTAN REPETIDOS SOLO CREA 1
+            where: { name: genreApi  } 
+        })                            
     })
 
-    return Genre.findAll()   // le pido que devuelva los que estan cargados en la BD, no los de la api
+    return Genre.findAll()   
 
         .then(resBD => {
             res.status(200).json(resBD)

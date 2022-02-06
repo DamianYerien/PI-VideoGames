@@ -3,10 +3,11 @@ const { Router } = require('express');
 const rutaVideogame = Router();
 const { API_KEY } = process.env;
 
-rutaVideogame.get("/:id", async (req, res) => {
-    let { id } = req.params;
+rutaVideogame.get("/:id", async (req, res) => { 
+
+    let {id}  = req.params;
     typeof id !== "string"? id = id.toString():id;
-    axios.get(`https://api.rawg.io/api/games/${id}${API_KEY}`)
+    axios.get(`https://api.rawg.io/api/games/${id}${API_KEY}`)   
         .then(response => {
             const juego = {
                 id: response.data.id,
