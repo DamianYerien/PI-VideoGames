@@ -107,7 +107,7 @@ export default function Home() {
                         return (
                             <fragment>
                                 <Link to={"/home/" + e.id}>
-                                    <Game name={e.name} image={e.image} rating={e.rating} key={e.id} />
+                                    <Game name={e.name} image={e.image} genres={e.genres} rating={e.rating} key={e.id} />
                                 </Link>
                             </fragment>
                         );
