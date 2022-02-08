@@ -1,15 +1,16 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
-export default function LandingPage(){
-    return(
+export default function LandingPage() {
+    return (
+        <div>
             <div>
                 <h1>Bienvenidos a DamiGames</h1>
-                <Link to= '/home'>
+                <Link to='/home'>
                     <button>Ingresar</button>
                 </Link>
             </div>
-
+        </div>
     )
 }

@@ -10,3 +10,10 @@ export function getGames(){
         })
     }
 }
+
+export function filterGenres(payload){
+    return {
+        type: 'FILTER_GENRE',
+        payload
+    }
+}

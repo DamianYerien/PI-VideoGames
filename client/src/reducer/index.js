@@ -12,6 +12,12 @@ function rootReducer(state = initialState, action){
                 ...state,
                 juegos : action.payload
             }
+        case 'FILTER_GENRE':
+            const allGames = state.juegos;
+            const statusFiltered = 0; // ver como hacer
+        return{
+
+        }
             default:
                 return state;
     }

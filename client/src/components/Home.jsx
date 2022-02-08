@@ -3,11 +3,23 @@ import { useDispatch, useSelector } from "react-redux";
 import { getGames } from "../actions";
 import { Link } from "react-router-dom";
 import Game from "./Game";
-
+import { useState } from "react";
+import Paginado from "./Paginado";
 
 export default function Home() {
     const dispatch = useDispatch();
     const todosLosJuegos = useSelector((state) => state.juegos);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [gamesPage, setGamesPage] = useState(15);
+    const indexLast = currentPage * gamesPage;
+    const indexFirst = indexLast - gamesPage;
+    const currentGames = todosLosJuegos.slice(indexFirst, indexLast);
+
+
+    const paginado = (pageNumber) => {
+        setCurrentPage(pageNumber)
+    }
+
     useEffect(() => {
         dispatch(getGames())
     }, [dispatch])
@@ -27,7 +39,7 @@ export default function Home() {
                 <div>
                     <label>Ordenar por:  </label>
                     <select>
-                        <option value="none">Unordered</option>
+                        <option value="none">Sin Ordenar</option>
                         <optgroup label="Alfabeticamente">
                         <option value="A-Z">Ascendente</option>
                         <option value="Z-A">Descendente</option>
@@ -42,16 +54,21 @@ export default function Home() {
                 <div>
                     <label>Filtrar por:  </label>
                     <select>
-                        <option value="all">None</option>
-                        {/* <optgroup label="Existente o Agregado"> */}
+                    <optgroup label="Filtrar">
+                        <option value="genres">Por Género</option>
+                        </optgroup>
+                        <optgroup label="Existente o Creado">
                         <option value="all">Todos</option>
                         <option value="api">API</option>
                         <option value="user">Creado</option>
-                        {/* </optgroup> */}
+                        </optgroup>
                         
                     </select>
-                    {
-                        todosLosJuegos && todosLosJuegos.map(e => {
+                    <Paginado gamesPage={gamesPage} 
+                    todosLosJuegos ={todosLosJuegos.length} 
+                    paginado={paginado}
+                     />
+                    { currentGames && currentGames.map(e => {
                             return (
                                 <fragment>
                                     <Link to={"/home/" + e.id}>

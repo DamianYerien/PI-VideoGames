@@ -7,9 +7,9 @@ const { API_KEY } = process.env;
 const obtieneJuegosApi = async () => {
     const juegosApi = [];
     try {
-        const consultaApi1 = await axios.get(`https://api.rawg.io/api/games${API_KEY}&page=95&page_size=8`);
-        const consultaApi2 = await axios.get(`https://api.rawg.io/api/games${API_KEY}&page=22&page_size=4`);
-        const consultaApi3 = await axios.get(`https://api.rawg.io/api/games${API_KEY}&page=23&page_size=4`);
+        const consultaApi1 = await axios.get(`https://api.rawg.io/api/games${API_KEY}&page=3&page_size=40`);
+        const consultaApi2 = await axios.get(`https://api.rawg.io/api/games${API_KEY}&page=4&page_size=10`);
+        const consultaApi3 = await axios.get(`https://api.rawg.io/api/games${API_KEY}&page=5&page_size=10`);
         const resultadoApi = [...consultaApi1.data.results, ...consultaApi2.data.results, ...consultaApi3.data.results]
      
         resultadoApi.forEach(resultado => {
