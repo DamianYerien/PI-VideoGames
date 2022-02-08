@@ -2,24 +2,101 @@
 
 
 const initialState = {
-    juegos : []
+    juegos: [],
+    allGenres: [],
+    juegosFilt: []
 }
 
-function rootReducer(state = initialState, action){
-    switch(action.type){
+function rootReducer(state = initialState, action) {
+    switch (action.type) {
         case 'GET_JUEGOS':
-            return{
+            return {
                 ...state,
-                juegos : action.payload
+                juegos: action.payload,
+                juegosFilt: action.payload
             }
-        case 'FILTER_GENRE':
-            const allGames = state.juegos;
-            const statusFiltered = 0; // ver como hacer
-        return{
+        
+       
+        case 'ORDER_BY_NAME':
 
-        }
-            default:
-                return state;
+            let sortArr = action.payload === 'A-Z' ?
+                state.juegos.sort(function (a, b) {
+                    if (a.name > b.name) {
+                        return 1;
+                    }
+                    if (b.name > a.name) {
+                        return -1;
+                    }
+                    return 0;
+                }) :
+                state.juegos.sort(function (a, b) {
+                    if (a.name > b.name) {
+                        return -1;
+                    }
+                    if (b.name > a.name) {
+                        return 11;
+                    }
+                    return 0;
+                })
+            return {
+                ...state,
+                juegos: sortArr
+            }
+        case 'ORDER_BY_RATING':
+
+            let sortArray = action.payload === 'rat-max' ?
+                state.juegos.sort(function (a, b) {
+                    if (a.rating > b.rating) {
+                        return 1;
+                    }
+                    if (b.rating > a.rating) {
+                        return -1;
+                    }
+                    return 0;
+                }) :
+                state.juegos.sort(function (a, b) {
+                    if (a.rating > b.rating) {
+                        return -1;
+                    }
+                    if (b.rating > a.rating) {
+                        return 11;
+                    }
+                    return 0;
+                })
+            return {
+                ...state,
+                juegos: sortArray
+            }
+        case "GET_ALL_GENRES":
+            return {
+                ...state,
+                allGenres: action.payload
+            };
+            case "FILTER_BY":
+                const copyForFilter = [...state.juegosFilt]
+                let filteredBy =[];
+                let allGenres = [...state.allGenres];
+
+                switch (action.payload){
+                    case 'all': filteredBy = copyForFilter; break;
+                    case 'created':filteredBy = copyForFilter.filter(e => e.createdInDb); break;
+                    case "api": filteredBy = copyForFilter.filter(e => !e.createdInDb); break;
+                    default:
+                
+                
+                
+                filteredBy = allGenres.includes(action.payload)
+                ? copyForFilter.filter(game => game.genres.some(el => el.name === action.payload))
+                : copyForFilter; break;
+                }
+
+            return {
+                ...state,
+                juegos: filteredBy.length === 0 ?[] : filteredBy 
+            }
+
+        default:
+            return state;
     }
 }
 
