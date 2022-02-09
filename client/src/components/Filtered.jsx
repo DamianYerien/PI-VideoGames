@@ -37,13 +37,10 @@ export default function Filtered({ handleSort, handleSortRating, handleFilterBy,
                         <option value="api">API</option>
                         <option value="created">Creado</option>
                     </optgroup>
-
                     <optgroup label="Filtrar por Género">
                         {allGenres.map(genre => <option value={genre} key={genre}>{genre}</option>)}
                     </optgroup>
-
                 </select >
-
             </div>
         </div>
     );

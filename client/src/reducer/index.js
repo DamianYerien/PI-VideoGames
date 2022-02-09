@@ -2,7 +2,9 @@
 const initialState = {
     juegos: [],
     allGenres: [],
-    juegosFilt: []
+    juegosFilt: [],
+    
+    
 }
 
 function rootReducer(state = initialState, action) {
@@ -13,6 +15,19 @@ function rootReducer(state = initialState, action) {
                 juegos: action.payload,
                 juegosFilt: action.payload
             };
+        
+        case 'GET_NAME_GAME':
+            return {
+                ...state, 
+                juegos: action.payload
+
+            };
+
+            case 'POST_GAME':
+            return {
+                ...state,
+                
+            }
         
         case 'ORDER_BY_NAME':
             let sortArr = action.payload === 'A-Z' ?
