@@ -1,6 +1,4 @@
 
-
-
 const initialState = {
     juegos: [],
     allGenres: [],
@@ -14,11 +12,9 @@ function rootReducer(state = initialState, action) {
                 ...state,
                 juegos: action.payload,
                 juegosFilt: action.payload
-            }
+            };
         
-       
         case 'ORDER_BY_NAME':
-
             let sortArr = action.payload === 'A-Z' ?
                 state.juegos.sort(function (a, b) {
                     if (a.name > b.name) {
@@ -41,9 +37,9 @@ function rootReducer(state = initialState, action) {
             return {
                 ...state,
                 juegos: sortArr
-            }
-        case 'ORDER_BY_RATING':
+            };
 
+        case 'ORDER_BY_RATING':
             let sortArray = action.payload === 'rat-max' ?
                 state.juegos.sort(function (a, b) {
                     if (a.rating > b.rating) {
@@ -66,12 +62,14 @@ function rootReducer(state = initialState, action) {
             return {
                 ...state,
                 juegos: sortArray
-            }
+            };
+
         case "GET_ALL_GENRES":
             return {
                 ...state,
                 allGenres: action.payload
             };
+
             case "FILTER_BY":
                 const copyForFilter = [...state.juegosFilt]
                 let filteredBy =[];
@@ -81,11 +79,7 @@ function rootReducer(state = initialState, action) {
                     case 'all': filteredBy = copyForFilter; break;
                     case 'created':filteredBy = copyForFilter.filter(e => e.createdInDb); break;
                     case "api": filteredBy = copyForFilter.filter(e => !e.createdInDb); break;
-                    default:
-                
-                
-                
-                filteredBy = allGenres.includes(action.payload)
+                    default: filteredBy = allGenres.includes(action.payload)
                 ? copyForFilter.filter(game => game.genres.some(el => el.name === action.payload))
                 : copyForFilter; break;
                 }
@@ -94,7 +88,6 @@ function rootReducer(state = initialState, action) {
                 ...state,
                 juegos: filteredBy.length === 0 ?[] : filteredBy 
             }
-
         default:
             return state;
     }
