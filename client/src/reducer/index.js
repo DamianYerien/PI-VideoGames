@@ -3,8 +3,9 @@ const initialState = {
     juegos: [],
     allGenres: [],
     juegosFilt: [],
-    
-    
+    allPlatforms: [],
+    detail: []
+        
 }
 
 function rootReducer(state = initialState, action) {
@@ -22,6 +23,12 @@ function rootReducer(state = initialState, action) {
                 juegos: action.payload
 
             };
+        
+        case 'GET_DETAIL':
+            return {
+                ...state,
+                detail: action.payload
+            }
 
             case 'POST_GAME':
             return {
@@ -57,7 +64,7 @@ function rootReducer(state = initialState, action) {
         case 'ORDER_BY_RATING':
             let sortArray = action.payload === 'rat-max' ?
                 state.juegos.sort(function (a, b) {
-                    if (a.rating > b.rating) {
+                    if (a.rating > b.rating) { 
                         return 1;
                     }
                     if (b.rating > a.rating) {
@@ -83,6 +90,12 @@ function rootReducer(state = initialState, action) {
             return {
                 ...state,
                 allGenres: action.payload
+            };
+
+            case "GET_PLATAFORMS":
+            return {
+                ...state,
+                allPlatforms: action.payload
             };
 
             case "FILTER_BY":

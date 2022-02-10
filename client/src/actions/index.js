@@ -34,6 +34,15 @@ export function getAllGenres() {
         })
     }
 }
+export function getPlataforms() {
+    return async (dispatch) => {
+        let json = await axios.get('http://localhost:3001/videogames/plataforms')
+        return dispatch({
+            type: "GET_PLATAFORMS",
+            payload: json.data
+        })
+    }
+}
 
 export function filterBy(payload) {
     return {
@@ -61,5 +70,19 @@ export function postGame(payload) {
     return async (dispatch) => {
         let response = await axios.post('http://localhost:3001/videogameSum', payload)
         return response
+    }
+}
+
+export function getDetail(id) {
+    return async function (dispatch) {
+        try {
+            let json = await axios.get('http://localhost:3001/videogame/' + id);
+            return dispatch({
+                type: "GET_DETAIL",
+                payload: json.data
+            })
+        } catch (error) {
+            console.log(error)
+        }
     }
 }

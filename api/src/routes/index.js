@@ -14,5 +14,5 @@ router.use("/genres", genres)
 router.use("/videogames", rutaVideogames);
 router.use("/videogame", rutaVideogame);
 router.use("/videogameSum", rutaVideogameSum);
-
+router.use("/videogames/plataforms", rutaVideogames);
 module.exports = router;

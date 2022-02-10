@@ -21,6 +21,7 @@ module.exports = (sequelize) => {
     image: {
       type: DataTypes.STRING,
       allowNull: true,
+      defaultValue:'https://raw.githubusercontent.com/DamianYerien/SPA-App/main/videogame.png'
     },
     platforms: {
       type: DataTypes.ARRAY(DataTypes.STRING),

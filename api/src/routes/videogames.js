@@ -11,7 +11,7 @@ const obtieneJuegosApi = async () => {
         const consultaApi2 = await axios.get(`https://api.rawg.io/api/games${API_KEY}&page=4&page_size=40`);
         const consultaApi3 = await axios.get(`https://api.rawg.io/api/games${API_KEY}&page=5&page_size=40`);
         const resultadoApi = [...consultaApi1.data.results, ...consultaApi2.data.results, ...consultaApi3.data.results]
-     
+
         resultadoApi.forEach(resultado => {
             juegosApi.push(
                 {
@@ -36,7 +36,7 @@ const obtieneJuegosBd = async () => {
             include: {
                 model: Genre,
                 attributes: ["name"],
-                through: {attributes: []}
+                through: { attributes: [] }
             }
         })
         return juegosBd
@@ -69,5 +69,23 @@ rutaVideogames.get("/", async (req, res) => {
         res.status(200).json(juegosTotal)
     }
 })
+
+rutaVideogames.get("/plataforms", async (req, res) => {
+
+    const juegos = await obtieneJuegosApi();
+    const allPlatforms = [];
+    juegos.map(game => {
+        game.platforms.map(platform => {
+            if (!allPlatforms.includes(platform)) {
+                allPlatforms.push(platform)
+            }
+        })
+    })
+    allPlatforms.length
+        ? res.status(200).json(allPlatforms)
+        : res.status(404).send('Error')
+}
+)
+
 
 module.exports = rutaVideogames;
