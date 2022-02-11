@@ -6,6 +6,7 @@ import Paginado from "./Paginado";
 import Filtered from "./Filtered";
 import NavBar from "./NavBar";
 import SearchBar from "./SearchBar";
+import s from '../styles/HomeStyle.module.css'
 
 export default function Home() {
     const dispatch = useDispatch();
@@ -55,7 +56,7 @@ export default function Home() {
     }
 
     return (
-        <div>
+        <div className={s.container} >
             <NavBar handleClick={handleClick} />
             <SearchBar/>
 

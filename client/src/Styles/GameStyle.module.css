@@ -1,0 +1,46 @@
+
+.middleDiv {
+    display: flex;
+    flex-direction:inherit;
+    margin-top: 20px;
+}
+
+.card {
+    display:flex;
+    flex-direction: column;
+    width: 500px;
+    align-content:space-around;
+    border-radius: 10px;
+    border: 1px solid grey;
+    height: 600px;
+    background-color: rgb(0, 0, 0, 0.50);
+    
+}
+.card:hover{
+    color: blanchedalmond;
+    background-color: rgb(0, 0, 0, 0.80);
+    width: 520px;
+    height: 630px;
+    transition-property: background-color, width, color, width, height;
+   transition-duration: 0.2s, 0.2s, 0.2s, 0.2s, 0.2s;
+}
+    
+
+
+.container{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content:center;
+    
+    border: 0px solid rgb(197, 11, 11);
+    
+    
+}
+.lado {
+    display:flex;
+    flex-direction:row;
+    justify-content:space-evenly;
+    align-content:space-around;
+
+}

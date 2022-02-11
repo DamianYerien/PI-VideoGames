@@ -95,18 +95,18 @@ export default function GameCreate() {
             <form onSubmit={e => handleSubmit(e)}>
                 <div>
                     <label>Nombre:</label>
-                    <input onChange={(e) => handleInputChange(e)} type='text' value={input.name} name='name' />
+                    <input placeholder='Ingrese un Nombre' onChange={(e) => handleInputChange(e)} type='text' value={input.name}  name='name' />
                     {errors.name && (
                         <p>{errors.name}</p>
                     )}
                 </div>
                 <div>
                     <label>URL Imagen:</label>
-                    <input onChange={(e) => handleInputChange(e)} type='text' value={input.image} name='image' />
+                    <input placeholder='(Opcional)' onChange={(e) => handleInputChange(e)} type='text' value={input.image} name='image' />
                 </div>
                 <div>
                     <label>Fecha de lanzamiento:</label>
-                    <input onChange={(e) => handleInputChange(e)} type='text' value={input.released} name='released' />
+                    <input placeholder='AAAA-MM-DD' onChange={(e) => handleInputChange(e)} type='date' value={input.released} name='released' />
                 </div>
                 <div>
                     <label>Rating:</label>

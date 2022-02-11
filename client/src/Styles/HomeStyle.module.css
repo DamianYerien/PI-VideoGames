@@ -1,0 +1,12 @@
+.container {
+    background: url(./HD.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 65% center;
+    
+    height: 100vh;
+    
+    position:inherit;
+    background-attachment: fixed;
+  overflow: scroll;
+}
