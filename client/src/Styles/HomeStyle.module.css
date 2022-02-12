@@ -1,12 +1,46 @@
-.container {
+body {
     background: url(./HD.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: 65% center;
+    background-position: center;
+
+     height: 100vh;
     
-    height: 100vh;
     
-    position:inherit;
-    background-attachment: fixed;
-  overflow: scroll;
+     position:inherit; 
+     background-attachment: fixed; 
+   overflow: scroll; 
 }
+.body:before {
+	content:'';
+	position: absolute;
+        top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0,0,0,0.6);
+}
+.games{
+  display:flex;
+  flex-wrap: wrap;
+  flex-direction: row; 
+  justify-content: space-evenly; 
+  align-content:center; 
+  padding: 2%;
+  margin-left: 8%;
+  margin-right: 8%;
+}
+
+.container{
+  content:'';
+	position:absolute;
+  top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0,0,0,0.6);
+  background-size: cover;
+  height:max-content;
+  
+}
+

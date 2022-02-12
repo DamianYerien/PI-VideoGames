@@ -9,7 +9,7 @@ export default function LandingPage() {
             <div className={s.container}>
                 <h1>Bienvenidos a DamiGames</h1>
                 <Link to='/home'>
-                    <button>Ingresar</button>
+                    <button  className={`${s.btnColor} ${s.btn}`} >Ingresar al Sitio</button>
                 </Link>
             </div>
         </div>

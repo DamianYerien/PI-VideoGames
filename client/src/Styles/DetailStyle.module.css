@@ -1,0 +1,80 @@
+.imagen {
+    
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    width: 100%;
+    height: auto;
+    
+}
+.card {
+    display:flex;
+    flex-direction: column;
+    width: 50%;
+    align-content:space-around;
+    border-radius: 20px;
+    border: 1px solid grey;
+    height: 90%;
+    background-color: rgb(0, 0, 0, 0.60);
+    color:aliceblue;
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row; 
+    justify-content: space-evenly; 
+    align-content:center; 
+    font-size: 150%;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+.orden{
+    width: 95%;
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content:center; 
+    align-items:center;
+}
+
+.btncomun {
+    background-color: rgb(3, 26, 34);
+    width: 140px;
+    height: 45px;
+    border-radius: 10px;
+    margin: 5px;
+    align-self: flex-end;
+    color: white;
+    font-family: "Consolas", monospace;
+    font-size: 18pt;
+}
+
+.btncomun:hover {
+    color: blanchedalmond;
+    background-color: grey;
+}
+.nombre{
+    width: 90%;
+    margin-bottom:3%;
+}
+.generos{
+    width: 90%;
+    margin-bottom:3%;
+    font-size: 40px;
+}
+.fecha{
+    width: 90%;
+    margin-bottom:3%;
+}
+.rating{
+    width: 90%;
+    margin-bottom:3%;
+}
+.descripcion{
+    width: 90%;
+    height: auto;
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content:center; 
+    align-items:center;
+    padding-left: 15%;
+}
+
+

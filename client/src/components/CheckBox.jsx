@@ -1,13 +1,16 @@
 import React from 'react'
+import s from '../styles/CreateStyle.module.css'
+
 
 export default function Checkbox({ checkboxValue, onChangeFunction }) {
 
     return (
-        <div>
-            <label>
+        <div className={s.labe}>
+            <label >
                 {checkboxValue}
             </label>
             <input
+            className={s.box}
                 type="checkbox"
                 id={checkboxValue}
                 onChange={e => onChangeFunction(e)}

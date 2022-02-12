@@ -1,0 +1,16 @@
+.btnColor {
+    background-color: rgb(3, 26, 34);
+    width: auto;
+    height: 30px;
+    border-radius: 10px;
+    margin: 5px;
+    align-self: flex-end;
+    color: white;
+    font-family: "Consolas", monospace;
+    font-size: 12pt;
+}
+
+.btn:hover {
+    color: blanchedalmond;
+    background-color: grey;
+}

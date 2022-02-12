@@ -5,7 +5,7 @@ import Games from "./Games";
 import Paginado from "./Paginado";
 import Filtered from "./Filtered";
 import NavBar from "./NavBar";
-import SearchBar from "./SearchBar";
+
 import s from '../styles/HomeStyle.module.css'
 
 export default function Home() {
@@ -58,7 +58,7 @@ export default function Home() {
     return (
         <div className={s.container} >
             <NavBar handleClick={handleClick} />
-            <SearchBar/>
+            
 
             <Filtered allGenres={allGenres}
                 handleFilterBy={handleFilterBy} handleSort={handleSort}
@@ -67,8 +67,9 @@ export default function Home() {
             <Paginado gamesPage={gamesPage}
                 todosLosJuegos={todosLosJuegos.length}
                 paginado={paginado} />
-
-            <Games currentGames={currentGames} />
+            <div className={s.games}>
+                <Games currentGames={currentGames} />
+            </div>
         </div>
     )
 }

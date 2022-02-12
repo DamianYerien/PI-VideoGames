@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getAllGenres, getPlataforms, postGame } from "../actions";
 import { Link, useNavigate } from "react-router-dom";
 import CheckBox from "./CheckBox";
+import s from '../styles/CreateStyle.module.css'
 
 export default function GameCreate() {
     const dispatch = useDispatch();
@@ -89,69 +90,78 @@ export default function GameCreate() {
     }
 
     return (
-        <div>
-            <Link to='/home'><button>Volver</button></Link>
-            <h1>Crea tu VideoJuego</h1>
-            <form onSubmit={e => handleSubmit(e)}>
-                <div>
-                    <label>Nombre:</label>
-                    <input placeholder='Ingrese un Nombre' onChange={(e) => handleInputChange(e)} type='text' value={input.name}  name='name' />
-                    {errors.name && (
-                        <p>{errors.name}</p>
-                    )}
-                </div>
-                <div>
-                    <label>URL Imagen:</label>
-                    <input placeholder='(Opcional)' onChange={(e) => handleInputChange(e)} type='text' value={input.image} name='image' />
-                </div>
-                <div>
-                    <label>Fecha de lanzamiento:</label>
-                    <input placeholder='AAAA-MM-DD' onChange={(e) => handleInputChange(e)} type='date' value={input.released} name='released' />
-                </div>
-                <div>
-                    <label>Rating:</label>
-                    <input onChange={(e) => handleInputChange(e)} type='text' value={input.rating} name='rating' />
-                </div>
-                <div>
-                    <label>Descripcion:</label>
-                    <input onChange={(e) => handleInputChange(e)} type='text' value={input.description} name='description' />
-                </div>
-                <div>
-                    <h3>Plataformas</h3>
-                    {/* <label>Plataformas:</label> */}
-                    {allPlatforms.map(platforms => (
-                        <CheckBox
-                            key={platforms}
-                            checkboxValue={platforms}
-                            onChangeFunction={handleCheckboxChange}
+        <div className={s.container}>
+          <div className={s.volver}> <Link to='/home'><button className= {s.btncomun} >Volver</button></Link></div> 
+            <div className={s.card}>
+                <h1 className={s.titulo}>Crea tu VideoJuego</h1>
+                <form className={s.form} onSubmit={e => handleSubmit(e)}>
+                    <div className={s.valores}>
+                      <div className={s.orden}>
+                        <div className={s.nombre}>
+                            <label>Nombre:</label>
+                            <input className={s.barra} placeholder='Ingrese un Nombre' onChange={(e) => handleInputChange(e)} type='text' value={input.name} name='name' />
+                            {errors.name && (
+                                <p>{errors.name}</p>
+                            )}
+                        </div>
+                        <div className={s.url}>
+                            <label>URL Imagen:</label>
+                            <input className={s.barra} placeholder='(Opcional)' onChange={(e) => handleInputChange(e)} type='text' value={input.image} name='image' />
+                        </div>
+                        </div>
+                        <div className={s.orden}>
+                        <div className={s.fecha}>
+                            <label>Fecha de lanzamiento:</label>
+                            <input className={s.barrafecha} placeholder='AAAA-MM-DD' onChange={(e) => handleInputChange(e)} type='date' value={input.released} name='released' />
+                        </div>
+                        <div className={s.rating}>
+                            <label>Rating:</label>
+                            <input className={s.barra} onChange={(e) => handleInputChange(e)} type='text' value={input.rating} name='rating' />
+                        </div>
+                        </div>
+                        
+                        <div className={s.descripcion}>
+                            <label>Descripcion: </label>
+                            <input className={s.barradesc} onChange={(e) => handleInputChange(e)} type='text' value={input.description} name='description' />
+                        </div>
+                        
+                    </div>
+                    <div className={s.ordencheck}>
+                      <div className={s.plat}> <h3 >Plataformas</h3></div> 
+                        {/* <label>Plataformas:</label> */}
+                        {allPlatforms.map(platforms => (
+                            <CheckBox
+                                key={platforms}
+                                checkboxValue={platforms}
+                                onChangeFunction={handleCheckboxChange}
 
-                        />
-                    ))}
-                </div>
-                <div>
-                    {/* <label>Generos:</label> */}
-                    <h3>Generos</h3>
+                            />
+                        ))}
+                    </div>
+                    <div className={s.ordencheck}>
+                        {/* <label>Generos:</label> */}
+                       <div className={s.plat}> <h3>Generos</h3></div>
 
-                    {allGenres.map(genre => (
-                        <CheckBox
-                            key={genre}
-                            checkboxValue={genre}
-                            onChangeFunction={handleCheckboxChange}
+                        {allGenres.map(genre => (
+                            <CheckBox
+                                key={genre}
+                                checkboxValue={genre}
+                                onChangeFunction={handleCheckboxChange}
 
-                        />
-                    ))}
-                </div>
-                <div>
+                            />
+                        ))}
+                    </div>
+                    <div className={s.footer}>
 
-                    <button onClick={() => handleReset()}
-                        type="reset" >Reset</button>
+                        <button onClick={() => handleReset()}
+                            type="reset" className={s.btncomun} >Reset</button>
 
-                    <button onClick={e => handleSubmit(e)}
-                        type="submit">Create </button>
-                </div>
-            </form>
+                        <button onClick={e => handleSubmit(e)}
+                            type="submit" className={`${s.btnColor} ${s.btn}`} >Crear Videojuego </button>
+                    </div>
+                </form>
 
-
+            </div>
         </div>
 
     )

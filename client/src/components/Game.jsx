@@ -8,7 +8,7 @@ export default function Game({ name, image, genres, rating, released, plataforms
         
             <div className={s.card}>
                 <div className={s.middleDiv}>
-            <img src={image ? image : imageDefault} alt="img not found"  />
+            <img className={s.ima}src={image ? image : imageDefault} alt="img not found"  />
             <h2>Nombre : {name}</h2>
             <h2>Rating : {rating}</h2>
             <h3>Géneros :</h3>

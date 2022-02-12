@@ -9,11 +9,13 @@ export default function Games({currentGames}){
     return (
         currentGames && currentGames.map(e => {
             return (
+                
                 <div className={s.container}>
                     <Link to={"/home/" + e.id}>
                         <Game name={e.name} image={e.image} rating={e.rating} genres={e.genres} key={e.id} />
                     </Link>
                 </div>
+               
             );
         })
     );

@@ -1,13 +1,14 @@
 .container{
+    
 
     justify-content:center;
     align-items: baseline;
     display: flex;
-    width: 900px;
+    /* width: 900px; */
     border-radius: 10px;
     border: 0px solid grey;
-    height: 350px;
-    margin-left: 500px;
-    margin-top: 100px;
+    /* height: 350px; */
+    /* margin-left: 500px;
+    margin-top: 100px; */
     }
     

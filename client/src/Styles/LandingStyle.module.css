@@ -1,4 +1,4 @@
-.container {
+/* .container {
     background: url(./HD.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -7,4 +7,19 @@
     height: 100vh;
     min-height: 30rem;
     position: relative;
+} */
+
+.btnColor {
+    background-color: rgb(3, 26, 34);
+    width: 140px;
+    height: 40px;
+    border-radius: 10px;
+    margin: 5px;
+    align-self: flex-end;
+    color: white;
+}
+
+.btn:hover {
+    color: blanchedalmond;
+    background-color: grey;
 }
