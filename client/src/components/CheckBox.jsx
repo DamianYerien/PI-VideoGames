@@ -1,5 +1,5 @@
 import React from 'react'
-import s from '../styles/CreateStyle.module.css'
+import s from '../Styles/CreateStyle.module.css'
 
 
 export default function Checkbox({ checkboxValue, onChangeFunction }) {

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Game from "./Game";
-import s from '../styles/GameStyle.module.css'
+import s from '../Styles/GameStyle.module.css'
 
 export default function Games({currentGames}){
 

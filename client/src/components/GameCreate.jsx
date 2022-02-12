@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getAllGenres, getPlataforms, postGame } from "../actions";
 import { Link, useNavigate } from "react-router-dom";
 import CheckBox from "./CheckBox";
-import s from '../styles/CreateStyle.module.css'
+import s from '../Styles/CreateStyle.module.css'
 
 export default function GameCreate() {
     const dispatch = useDispatch();

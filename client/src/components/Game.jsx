@@ -1,5 +1,5 @@
 import React from "react";
-import s from '../styles/GameStyle.module.css'
+import s from '../Styles/GameStyle.module.css'
 
 export default function Game({ name, image, genres, rating, released, plataforms, description }) {
     const imageDefault = "https://raw.githubusercontent.com/DamianYerien/SPA-App/main/videogame.png";
@@ -9,7 +9,7 @@ export default function Game({ name, image, genres, rating, released, plataforms
             <div className={s.card}>
                 <div className={s.middleDiv}>
             <img className={s.ima}src={image ? image : imageDefault} alt="img not found"  />
-            <h2>Nombre : {name}</h2>
+            <h2 className={s.nombre}>Nombre : {name}</h2>
             <h2>Rating : {rating}</h2>
             <h3>Géneros :</h3>
             <h4>{genres.length ? genres.map(genre => <span key={genre}>{`${genre.name} `}</span>) : <></>

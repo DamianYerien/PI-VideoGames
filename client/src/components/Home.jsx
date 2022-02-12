@@ -6,7 +6,7 @@ import Paginado from "./Paginado";
 import Filtered from "./Filtered";
 import NavBar from "./NavBar";
 
-import s from '../styles/HomeStyle.module.css'
+import s from '../Styles/HomeStyle.module.css'
 
 export default function Home() {
     const dispatch = useDispatch();
