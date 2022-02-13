@@ -23,6 +23,7 @@ function handleSubmit(e){
   
   return (
   <div className={s.container}>
+    
     <input className={s.barra}
      type="text" placeholder='   Buscar Juego'
      onChange ={(e) =>handleInput(e)}/>

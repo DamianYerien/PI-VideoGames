@@ -10,7 +10,7 @@ export default function NavBar({handleClick}){
         <div className={s.orden}>
             
             
-            <div className={s.titulo}><h1>DAMI GAMES</h1></div>
+            <div className={s.titulo} onClick={e => { handleClick(e) }}><h1>HALOGAMES</h1></div>
             <div className={s.crear}><Link to='/game'><button className={`${s.btnColor} ${s.btn}`}>Crear VideoJuego</button></Link></div>
             {/* <div><button className={`${s.btnColor} ${s.btn}`} onClick={e => { handleClick(e) }}>Refresh</button></div> */}
             <div className={s.search}><SearchBar  /></div>

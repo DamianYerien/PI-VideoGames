@@ -19,34 +19,57 @@
 .nombre{
     text-decoration:solid;
     text-decoration:none;
+    width: auto;
 
     color:white;
     font-family: Arial, Helvetica, sans-serif;
 }
 .rating{
-   
+    background-color: rgba(84, 72, 221, 0.5);
+    border-radius: 20px;
     text-decoration:solid;
     text-decoration:none;
     color:white;
     font-family: Arial, Helvetica, sans-serif;
+    width: auto;
+    height: 40px;
+    padding-left: 2%;
+    padding-right: 2%;
+    align-content:stretch; 
+    align-items:center;
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content:center; 
+    align-items:center;
+    }
+.titulorat{
+
 }
 .generos{
     text-decoration:solid;
     text-decoration:none;
     color:white;
     font-family: Arial, Helvetica, sans-serif;
-    height: 20px;
+    height: 30px;
     margin-bottom: 0%;
     padding-top: 2%;
+    background-color:  rgba(84, 72, 221, 0.5);
+    border-radius: 20px;
+    padding-left: 2%;
+    padding-right: 2%;
 }
 .genero{
     
-    text-decoration:solid;
     text-decoration:none;
+   
     color:white;
     font-family: Arial, Helvetica, sans-serif;
-     
+    
     height: 20px;
+}
+.span{
+    padding: 1px;
 }
 .ima{
     border-top-left-radius: 20px;
@@ -62,6 +85,7 @@
     border: 1px solid grey;
     height: 90%;
     background-color: rgb(0, 0, 0, 0.50);
+    box-shadow: 4px 4px 4px 3px rgba(206, 198, 198, 0.2);
     
     
     
@@ -74,6 +98,7 @@
     border: 2px solid rgb(45, 82, 247);
     transition-property: background-color, width, color, width, height;
    transition-duration: 0.2s, 0.2s, 0.2s, 0.2s, 0.2s;
+   box-shadow: 5px 5px 5px 4px rgba(206, 198, 198, 0.2);
 }
     
 

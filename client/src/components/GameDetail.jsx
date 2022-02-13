@@ -40,7 +40,7 @@ return (
             <div><h4>{gameId[0].platforms.length ? gameId[0].platforms.map(p => <span key={p}>{`${p} `}</span>) : <></>
             }</h4></div>
             </div>
-            <div className={s.descripcion}>{<p>{gameId[0].description.substr(3)}</p>}</div>
+            <div className={s.descripcion}>{gameId[0].description}</div>
             
         </div>
         </div>

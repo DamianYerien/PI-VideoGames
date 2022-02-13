@@ -10,9 +10,9 @@ export default function Game({ name, image, genres, rating, released, plataforms
             <div className={s.middleDiv}>
                 <img className={s.ima} src={image ? image : imageDefault} alt="img not found" />
                 <div className={s.orden}><h2 className={s.nombre}> {name}</h2>
-                    <h3 className={s.rating}>Rating : {rating}</h3>
+                 <div className={s.rating}>  <h3 className={s.titulorat}>Rating : {rating}</h3></div> 
                     <h3 className={s.generos}>Géneros :</h3>
-                    <h4 className={s.genero}>{genres.length ? genres.map(genre => <span key={genre}>{`${genre.name }  `}</span>) : <></>
+                    <h4 className={s.genero}>{genres.length ? genres.map(genre => <span className={s.span} key={genre}>{`${genre.name }  `}</span>) : <></>
                     }</h4>
                 </div>
                 <br></br>

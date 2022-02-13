@@ -1,25 +1,44 @@
-/* .container {
-    background: url(./HD.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 65% center;
-    display: flex;
-    height: 100vh;
-    min-height: 30rem;
-    position: relative;
-} */
-
+.orden{
+    width:95%;
+    height: 800px;
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content:center; 
+    align-items:center;
+    align-self:stretch
+}
 .btnColor {
     background-color: rgb(3, 26, 34);
-    width: 140px;
-    height: 40px;
+    width: 250px;
+    height: 60px;
     border-radius: 10px;
     margin: 5px;
     align-self: flex-end;
     color: white;
+    font-size: 24px;
+    
 }
 
 .btn:hover {
     color: blanchedalmond;
     background-color: grey;
+}
+
+.titulo{
+    width: 50%;
+    font-size: 70px;
+    height: auto;  
+    top: 80%;
+    padding-left: 6%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.indiv{
+    width: 100%;
+    height: 20%; 
+}
+
+.posboton{
+padding-left: 25%;
 }

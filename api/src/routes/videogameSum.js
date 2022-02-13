@@ -6,6 +6,7 @@ const { Videogame, Genre } = require('../db');
 
 rutaVideogameSum.post("/", (req, res) => {
     let { name, image, description, released, rating, genres, platforms, createdInDb } = req.body;
+    name = name.trim().charAt(0).toUpperCase() + name.trim().slice(1)
     Videogame.create({
         name,
         image,
