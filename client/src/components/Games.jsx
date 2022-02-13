@@ -11,7 +11,7 @@ export default function Games({currentGames}){
             return (
                 
                 <div className={s.container}>
-                    <Link to={"/home/" + e.id}>
+                    <Link className={s.link} to={"/home/" + e.id}>
                         <Game name={e.name} image={e.image} rating={e.rating} genres={e.genres} key={e.id} />
                     </Link>
                 </div>

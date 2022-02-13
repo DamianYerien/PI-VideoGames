@@ -1,13 +1,13 @@
 import React from "react";
-
+import s from '../Styles/FilteredStyle.module.css'
 export default function Filtered({ handleSort, handleSortRating, handleFilterBy, allGenres }) {
 
 
     return (
         <div>
             <div>
-                <label>Ordenar por Nombre:  </label>
-                <select onChange={e => handleSort(e)}>
+                <label className={s.letra}>Ordenar por Nombre:  </label>
+                <select className={s.barra} onChange={e => handleSort(e)}>
                     <optgroup label="Alfabeticamente">
                         <option value="none">Todos</option>
                         <option value="A-Z">A - Z</option>
@@ -16,9 +16,9 @@ export default function Filtered({ handleSort, handleSortRating, handleFilterBy,
                 </select>
                 <br></br>
                 <br></br>
-                <label>Ordenar por Rating:  </label>
-                <select onChange={e => handleSortRating(e)}>
-                    <optgroup label="Rating">
+                <label className={s.letra}>Ordenar por Rating:  </label>
+                <select className={s.barra} onChange={e => handleSortRating(e)}>
+                    <optgroup  label="Rating">
                         <option value="none">Todos</option>
                         <option value="rat-max">Ascendente</option>
                         <option value="rat-min">Descendente</option>
@@ -27,8 +27,8 @@ export default function Filtered({ handleSort, handleSortRating, handleFilterBy,
             </div>
             <br></br>
             <div>
-                <label>Filtrar por   </label>
-                <select onChange={e => handleFilterBy(e)}>
+                <label className={s.letra}>Filtrar por   </label>
+                <select className={s.barra} onChange={e => handleFilterBy(e)}>
                     <optgroup >
                         <option value="all">Todos Los Juegos</option>
                     </optgroup>

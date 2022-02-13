@@ -8,6 +8,7 @@
     color: white;
     font-family: "Consolas", monospace;
     font-size: 120%;
+    margin-top: 18%;
 }
 
 .btn:hover {
@@ -30,16 +31,18 @@
     height: auto;
     color: white;
     font-family: "Consolas", monospace;
-    font-size: 12pt;
+    font-size: 16pt;
+    margin-left: 2%;
 
 }
 
 .search{
-    justify-content:flex-end
+    justify-content:flex-end;
+    margin-top: 2%;
 }
 
 .crear{
     width: 200px;
     height: auto;
-    justify-content:
+    
 }
