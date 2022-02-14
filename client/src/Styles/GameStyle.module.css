@@ -43,9 +43,13 @@
     align-content:center; 
     align-items:center;
     }
-.titulorat{
+    .titulogames{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color:antiquewhite;
+        font-size: 60px;
+        height: 700px;
 
-}
+    }
 .generos{
     text-decoration:solid;
     text-decoration:none;

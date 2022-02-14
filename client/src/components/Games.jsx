@@ -7,7 +7,7 @@ export default function Games({currentGames}){
 
 
     return (
-        currentGames && currentGames.map(e => {
+        currentGames.length ===0 ? <div  className={s.titulogames}><p>Juego no encontrado</p></div> : currentGames.map(e => {
             return (
                 
                 <div className={s.container}>

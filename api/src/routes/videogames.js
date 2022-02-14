@@ -9,7 +9,7 @@ const obtieneJuegosApi = async () => {
     try {
         const consultaApi1 = await axios.get(`https://api.rawg.io/api/games${API_KEY}&page=3&page_size=40`);
         const consultaApi2 = await axios.get(`https://api.rawg.io/api/games${API_KEY}&page=4&page_size=40`);
-        const consultaApi3 = await axios.get(`https://api.rawg.io/api/games${API_KEY}&page=5&page_size=40`);
+        const consultaApi3 = await axios.get(`https://api.rawg.io/api/games${API_KEY}&page=6&page_size=40`);
         const resultadoApi = [...consultaApi1.data.results, ...consultaApi2.data.results, ...consultaApi3.data.results]
 
         resultadoApi.forEach(resultado => {
@@ -64,7 +64,7 @@ rutaVideogames.get("/", async (req, res) => {
         })
         juegosFiltrados.length
             ? res.status(200).json(juegosFiltrados)
-            : res.status(404).send('OMG !!! No existe ese juego')
+            : res.status(200).send(juegosFiltrados)
     } else {
         res.status(200).json(juegosTotal)
     }
