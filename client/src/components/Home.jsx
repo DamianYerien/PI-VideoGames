@@ -64,7 +64,7 @@ export default function Home() {
                 handleFilterBy={handleFilterBy} handleSort={handleSort}
                 handleSortRating={handleSortRating} />
 
-            <Paginado gamesPage={gamesPage}
+            <Paginado currentPage={currentPage} gamesPage={gamesPage}
                 todosLosJuegos={todosLosJuegos.length}
                 paginado={paginado} />
             <div className={s.games}>

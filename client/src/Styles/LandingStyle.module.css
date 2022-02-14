@@ -10,8 +10,8 @@
 }
 .btnColor {
     background-color: rgb(3, 26, 34);
-    width: 250px;
-    height: 60px;
+    width: 280px;
+    height: 65px;
     border-radius: 10px;
     margin: 5px;
     align-self: flex-end;
@@ -27,7 +27,7 @@
 
 .titulo{
     width: 50%;
-    font-size: 70px;
+    font-size: 80px;
     height: auto;  
     top: 80%;
     padding-left: 6%;

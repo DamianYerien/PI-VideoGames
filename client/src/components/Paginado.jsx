@@ -1,7 +1,7 @@
 import React from "react";
 import s from '../Styles/PaginadoStyle.module.css'
 
-export default function paginado({gamesPage, todosLosJuegos, paginado}){
+export default function paginado({gamesPage, todosLosJuegos, paginado, currentPage}){
     const pageNumbers = [];
 
     for (let i = 0; i < Math.ceil(todosLosJuegos/gamesPage); i++) {
@@ -16,7 +16,7 @@ export default function paginado({gamesPage, todosLosJuegos, paginado}){
                 {
                     pageNumbers && pageNumbers.map(number =>(
                         
-                        <p className={`${s.boton} `} onClick={()=>paginado(number)} key={number}> {number}</p>
+                        <p className={`${number === currentPage? s.active : s.boton} `} onClick={()=>paginado(number)} key={number}> {number}</p>
                         
                     ))
                 }
