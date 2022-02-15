@@ -70,6 +70,7 @@ export default function Home() {
             <div className={s.games}>
                 <Games currentGames={currentGames} />
             </div>
+            
         </div>
     )
 }

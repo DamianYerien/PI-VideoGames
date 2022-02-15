@@ -12,7 +12,7 @@ function validation(input) {
         errors.name = "Nombre entre 3 y 40 caracteres"
     } if (!/^[a-zA-Z0-9 .]+$/.test(input.name)) {
         errors.name = "Nombre no puede contener caracteres especiales"
-    } if (!/^\d{2,4}-\d{1,2}-\d{1,2}$/.test(input.released)) {
+    } if (!/^\d{4}-\d{2}-\d{2}$/.test(input.released)) {
         errors.released = "Ingrese una fecha valida"
     } if (input.description.length > 450 || input.description.length < 5) {
         errors.description = "La descripcion debe ser entre 5 y 450 caracteres"
@@ -21,10 +21,9 @@ function validation(input) {
     } if ((input.rating > 5 || input.rating < 1) || input.rating === typeof String) {
         errors.rating = "El rating debe ser entre 1 y 5"
     }
-
     return errors;
-
 }
+
 export default function GameCreate() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -100,8 +99,6 @@ export default function GameCreate() {
     }
 
 
-
-
     return (
         <div className={s.container}>
             <div className={s.volver}> <Link to='/home'><button className={s.btncomun} >Volver</button></Link></div>
@@ -121,6 +118,7 @@ export default function GameCreate() {
                                 <label>URL Imagen:</label>
                                 <input className={s.barra} placeholder='(Opcional)' onChange={(e) => handleInputChange(e)} type='text' value={input.image} name='image' />
                             </div>
+
                         </div>
                         <div className={s.orden}>
                             <div className={s.fecha}>
@@ -157,21 +155,17 @@ export default function GameCreate() {
                     <div className={s.ordencheck}>
                         {/* <label>Generos:</label> */}
                         <div className={s.plat}> <h3>Géneros</h3><h6 className={s.plath6}>(Seleccione al menos 1 género)</h6></div>
-
                         {allGenres.map(genre => (
                             <CheckBox
                                 key={genre}
                                 checkboxValue={genre}
                                 onChangeFunction={handleCheckboxChange}
-
                             />
                         ))}
                     </div>
                     <div className={s.footer}>
-
                         <button onClick={() => handleReset()}
                             type="reset" className={s.btncomun} >Reset</button>
-
                         <button
                             type="submit" className={`${s.btnColor} ${s.btn}`}
                             disabled={errors.name || errors.released || errors.description || errors.rating || !input.genres.length || !input.platforms.length}
