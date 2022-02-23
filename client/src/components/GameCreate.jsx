@@ -167,12 +167,11 @@ export default function GameCreate() {
                         <button onClick={() => handleReset()}
                             type="reset" className={s.btncomun} >Reset</button>
                         <button
-                            type="submit" className={`${s.btnColor} ${s.btn}`}
+                            type="submit" className={errors.name || errors.released || errors.description || errors.rating || !input.genres.length || !input.platforms.length ? s.erro : s.btn}
                             disabled={errors.name || errors.released || errors.description || errors.rating || !input.genres.length || !input.platforms.length}
                         >Crear Videojuego </button>
                     </div>
                 </form>
-
             </div>
         </div>
 

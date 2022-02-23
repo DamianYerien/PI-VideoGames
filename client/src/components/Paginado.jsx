@@ -13,13 +13,24 @@ export default function paginado({gamesPage, todosLosJuegos, paginado, currentPa
         <div className={s.nav}>
       
             <ul className={s.container} >
+            {currentPage > 1 ? 
+
+<p className={s.boton} onClick={()=>paginado(currentPage -1) }> {'<<'}  </p>  : <p className={s.boton} >{'<<'} </p>}
                 {
                     pageNumbers && pageNumbers.map(number =>(
                         
                         <p className={`${number === currentPage? s.active : s.boton} `} onClick={()=>paginado(number)} key={number}> {number}</p>
                         
+
+                        
                     ))
+                           
+                    
                 }
+
+                {currentPage < pageNumbers.length ? 
+
+                <p className={s.boton}  onClick={()=>paginado(currentPage +1) }> {'>>'} </p>  : <p className={s.boton} >{'>>'} </p>}
             </ul>
 
        
