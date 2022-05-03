@@ -4,6 +4,12 @@ const rutaVideogames = Router();
 const { Videogame, Genre } = require('../db');
 const { API_KEY } = process.env;
 
+
+
+
+
+
+
 const obtieneJuegosApi = async () => {
     const juegosApi = [];
     try {
